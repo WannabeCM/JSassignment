@@ -13,10 +13,18 @@
         width: 100px;
         padding: 10px;
       }
+      #hero {
+        position: absolute;
+        width: 64px;
+      }
     </style>
   </head>
   <body>
-    <img id="meImg" src="./thumb_crop_resize.jpg" alt="" />
+    <img
+      id="hero"
+      src="./thumb_crop_resize.jpg"
+      style="top: 450px; left: 350px; width: 200px"
+    />
     <br />
     <button>코딩!</button>
     <p>프로그래밍 실력: <span id="num">1</span></p>
@@ -47,7 +55,7 @@
           this.num--;
         },
       };
-      //레벨업
+      레벨업;
       const myBtn = document.querySelector("button");
       myBtn.addEventListener("click", function () {
         me.programming(programSkill);
@@ -56,10 +64,12 @@
         document.getElementById("num").innerHTML = programSkill.level;
         document.getElementById("num2").innerHTML = restNum.num;
         if (programSkill.level == 5) {
-          document.getElementById("meImg").src = "./test.jpg";
+          document.getElementById("hero").src = "./test.jpg";
           num2.parentElement.remove();
         }
       });
+
+      //키보드 움직이기
     </script>
   </body>
 </html>
